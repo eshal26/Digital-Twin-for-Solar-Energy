@@ -1,20 +1,25 @@
 # Digital-Twin-for-Solar-Energy
 
-# Objective:
+## Objective:
 To create a digital twin of a solar plant that accurately forecasts solar power generation by leveraging advanced time series analysis and machine learning models. This twin will provide actionable insights to optimize energy management and facilitate renewable energy integration into the power grid.
 
 
 ## Dataset:
 The dataset contains various environmental, operational, and solar generation-related features, including:
 •	Features (Inputs):
-o	DE_solar_capacity: Total installed solar capacity in Germany (MW).
-o	DE_temperature: Temperature in degrees Celsius, influencing solar panel efficiency.
-o	DE_radiation_direct_horizontal: Direct solar radiation on a horizontal plane (W/m²).
-o	DE_radiation_diffuse_horizontal: Diffuse solar radiation on a horizontal plane (W/m²).
-o	DE_pv_national_current: National aggregated solar PV generation capacity factor in Germany.
-•	Target (Output):
-o	DE_solar_generation_actual: Actual solar power generation in Germany (MW).
-•	Temporal Data: Timestamped records in UTC to enable time series analysis.
+-	DE_solar_capacity: Total installed solar capacity in Germany (MW).
+
+-	DE_temperature: Temperature in degrees Celsius, influencing solar panel efficiency.
+  
+-	DE_radiation_direct_horizontal: Direct solar radiation on a horizontal plane (W/m²).
+  
+-	DE_radiation_diffuse_horizontal: Diffuse solar radiation on a horizontal plane (W/m²).
+  
+-	DE_pv_national_current: National aggregated solar PV generation capacity factor in Germany.
+  
+###	Target (Output):
+- DE_solar_generation_actual: Actual solar power generation in Germany (MW).
+-	Temporal Data: Timestamped records in UTC to enable time series analysis.
 ________________________________________
 ## Methodology:
 1.	Time Series Analysis with Prophet:
@@ -23,6 +28,7 @@ o	It extracts critical trend components from the historical data, which act as a
 o	Key Benefits:
 	Captures non-linear growth trends with annual and weekly seasonality.
 	Handles missing data and outliers effectively.
+
 2.	Machine Learning with XGBoost:
 o	XGBoost is used as the primary predictive model.
 o	Inputs include:
@@ -36,16 +42,20 @@ ________________________________________
 o	Remove null and irrelevant data points.
 o	Create additional time-related features (e.g., year, month, day, hour, day of the week).
 o	Normalize or scale features for uniformity.
-2.	Trend Analysis:
+
+3.	Trend Analysis:
 o	Use Prophet to extract trend data over time.
 o	Identify periodic fluctuations (daily, weekly, yearly patterns).
-3.	Feature Engineering:
+
+5.	Feature Engineering:
 o	Incorporate trends from Prophet as features.
 o	Combine them with environmental and operational inputs.
-4.	Model Development:
+
+7.	Model Development:
 o	Train the XGBoost model using engineered features.
 o	Optimize hyperparameters using techniques like grid search or Bayesian optimization.
-5.	Model Evaluation:
+
+9.	Model Evaluation:
 o	Assess the performance using metrics like:
 	Root Mean Square Error (RMSE)
 	Mean Absolute Error (MAE)
@@ -53,8 +63,8 @@ o	Assess the performance using metrics like:
 o	Cross-validate to ensure robustness.
 
 ##	Future Plan:
-o	Further enhance the performance using neural networks or other ML algorithms.
-o	Visualize the digital twin using platforms like Unity for real-time monitoring and scenario analysis.
+-	Further enhance the performance using neural networks or other ML algorithms.
+-	Visualize the digital twin using platforms like Unity for real-time monitoring and scenario analysis.
 
 
 
